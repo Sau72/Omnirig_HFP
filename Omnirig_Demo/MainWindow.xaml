@@ -1,0 +1,57 @@
+﻿<Window x:Class="Omnirig_Demo_WPF_CS.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Omnirig_Demo_WPF_CS"
+        mc:Ignorable="d"
+        Title="OmniRig HFP" Height="170" Width="513" Loaded="Window_Loaded" ResizeMode="NoResize" Unloaded="Window_UnLoaded" Icon="/clock.ico">
+    <Grid Background="#FFECEAEA">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="10" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="10" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" MinHeight="7.96" />
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="10" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="10" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="10" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="10" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="10" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="10" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="109.063" />
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+        <Label Grid.Column="1" Grid.Row="1" Content="RX" Margin="0,0,0,10" Grid.RowSpan="2" />
+        <Label Grid.Column="2" Grid.Row="1" Content="TX" Grid.ColumnSpan="3" Margin="10,0,10,10" Grid.RowSpan="2" />
+        <Label Grid.Column="5" Grid.Row="1" Content="Mode" Grid.ColumnSpan="2" Margin="0,0,10,10" Grid.RowSpan="2" />
+        <Label Grid.Column="7" Grid.Row="1" Content="Status" Grid.ColumnSpan="2" Margin="0,0,10,10" Grid.RowSpan="2" />
+
+        <Label Grid.Column="1" Grid.Row="3" Content="{Binding Path=RX, ValidatesOnDataErrors=true, NotifyOnValidationError=true,  UpdateSourceTrigger=PropertyChanged}" Margin="0,0,0,10" Grid.RowSpan="2" />
+        <Label Grid.Column="2" Grid.Row="3" Content="{Binding Path=TX, ValidatesOnDataErrors=true, NotifyOnValidationError=true,  UpdateSourceTrigger=PropertyChanged}" Grid.ColumnSpan="3" Margin="10,0,10,10" Grid.RowSpan="2" />
+        <Label Grid.Column="5" Grid.Row="3" Content="{Binding Path=Mode}" Grid.ColumnSpan="2" Margin="0,0,10,10" Grid.RowSpan="2"/>
+        <Label Grid.Column="7" Grid.Row="3" Content="{Binding Path=Status}" Grid.ColumnSpan="2" Margin="0,0,10,10" Grid.RowSpan="2" />
+        <Button Grid.Column="13" Grid.Row="3" Content="OminiRig Settings"  Click="BtnOmniRigSettings_Click" Grid.ColumnSpan="2" Margin="0,0,10,10" Grid.RowSpan="2"/>
+        <TextBox Grid.Column="13" Grid.Row="5" Grid.ColumnSpan="2" Text="{Binding Path=Frequency1, ValidatesOnDataErrors=true, NotifyOnValidationError=true,  UpdateSourceTrigger=PropertyChanged}" Margin="0,0,10,10" Grid.RowSpan="3"/>
+        <TextBox Grid.Column="13" Grid.Row="8" Grid.ColumnSpan="2" Text="{Binding Path=Frequency2, NotifyOnValidationError=true, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=true}" Margin="0,0,10,2" />
+        <Label Grid.Column="7" Grid.Row="4" Content="0-30 м" Grid.ColumnSpan="2" Margin="5,25,5,7" Grid.RowSpan="4" />
+        <Label Grid.Column="7" Grid.Row="7" Content="30-59 м" Grid.ColumnSpan="2" Margin="5,24,5,6" Grid.RowSpan="3" />
+
+    </Grid>
+</Window>
